@@ -1,13 +1,8 @@
 <script>
   import Criteria from './CriteriaItem.svelte'
-  import {CriteriaStore} from '../store.js';
-
-  let criteriaCount = $CriteriaStore.length;
-
+  export let criteraList = [];
 </script>
 
-<h1>Critères RGAA 4.1 ({criteriaCount})</h1>
-
-{#each $CriteriaStore as criteria}
-  <Criteria {criteria} />
+{#each criteraList as criteria}
+  <Criteria criteria={criteria.criterium} />
 {/each}

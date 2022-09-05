@@ -5,7 +5,7 @@
   let state = 'DEFAULT';
 
   // Export full criteria title.
-  export const fullTitle = `${criteria.theme}.${criteria.number} ${criteria.title}`;
+  export const fullTitle = `${criteria.number} ${criteria.title}`;
 
   // Set state.
   const setCriteriaState = (e) => {
@@ -16,15 +16,14 @@
 
 <div class="criteria">
   <h2>{fullTitle}</h2>
-  <strong>{state}</strong>
+  <div>
+    <strong>{state}</strong>
+  </div>
 
-  {#if state !== 'VALID'}
-    <Button label={"Conforme"} state="VALID" on:state-update={setCriteriaState} />
-  {/if}
-
-  {#if state !== 'DEFAULT'}
-    <Button label={"Non-testé"} state="DEFAULT" on:state-update={setCriteriaState} />
-  {/if}
+  <Button label={"Conforme"} state="VALID" on:state-update={setCriteriaState} />
+  <Button label={"Non-conforme"} state="NOT_VALID" on:state-update={setCriteriaState} />
+  <Button label={"Non-testé"} state="DEFAULT" on:state-update={setCriteriaState} />
+  <Button label={"Non-applicable"} state="NOT_APPLICABLE" on:state-update={setCriteriaState} />
 
 </div>
 

@@ -1,7 +1,7 @@
 <script>
-  import CriteriaList from './lib/CriteriaList.svelte'
+  import TopicList from './lib/TopicList.svelte'
 </script>
 
 <main>
-  <CriteriaList />
+  <TopicList />
 </main>
