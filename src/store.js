@@ -1,5 +1,6 @@
 import { writable} from "svelte/store";
 
+// Get data from https://github.com/DISIC/RGAA/blob/master/v4.1/JSON/criteres.json.
 export const CriteriaStore = writable([
     {
       "topic": "Images",
